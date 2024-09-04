@@ -1,0 +1,41 @@
+### IntelliJ IDEA ###
+out/
+!**/src/main/**/out/
+!**/src/test/**/out/
+
+### Eclipse ###
+.apt_generated
+.classpath
+.factorypath
+.project
+.settings
+.springBeans
+.sts4-cache
+bin/
+!**/src/main/**/bin/
+!**/src/test/**/bin/
+
+### NetBeans ###
+/nbproject/private/
+/nbbuild/
+/dist/
+/nbdist/
+/.nb-gradle/
+
+### VS Code ###
+.vscode/
+
+### Mac OS ###
+.DS_Store
+/.idea/sonarlint/issuestore/0/b/0bf88464ca916c52c9b0a37677fde671c455f8d6
+/.idea/sonarlint/securityhotspotstore/0/b/0bf88464ca916c52c9b0a37677fde671c455f8d6
+/.idea/sonarlint/issuestore/2/a/2a8e7394970f09fe35ee0d7f6c0a663eff8bb418
+/.idea/sonarlint/securityhotspotstore/2/a/2a8e7394970f09fe35ee0d7f6c0a663eff8bb418
+/.idea/sonarlint/issuestore/3/8/38a5f6a3ee8f3322438f1e05b9b554f85713b258
+/.idea/sonarlint/securityhotspotstore/3/8/38a5f6a3ee8f3322438f1e05b9b554f85713b258
+/.idea/sonarlint/issuestore/9/2/924f089edb4af5ee45c8a9d1129cd28e2b368138
+/.idea/sonarlint/securityhotspotstore/9/2/924f089edb4af5ee45c8a9d1129cd28e2b368138
+/.idea/sonarlint/issuestore/d/5/d5d591d9addd0210bb3ee28fb077272cf1dfae00
+/.idea/sonarlint/securityhotspotstore/d/5/d5d591d9addd0210bb3ee28fb077272cf1dfae00
+/.idea/sonarlint/issuestore/index.pb
+/.idea/sonarlint/securityhotspotstore/index.pb
