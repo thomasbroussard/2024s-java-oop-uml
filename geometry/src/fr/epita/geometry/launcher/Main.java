@@ -15,10 +15,9 @@ public class Main {
         for (int i = 0; i < 1000000; i++){
             Triangle triangle = new Triangle(1 + i,2+i,3+i,4+i);
             triangles.add(triangle);
+            // System.out.println(triangleArea);
+            // System.out.println(trianglePerimeter);
         }
-
-        // System.out.println(triangleArea);
-        // System.out.println(trianglePerimeter);
 
 
 
