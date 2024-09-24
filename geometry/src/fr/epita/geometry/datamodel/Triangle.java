@@ -3,7 +3,7 @@ package fr.epita.geometry.datamodel;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Triangle {
+public class Triangle implements Shape {
     private final double height;
     private double base;
     private double sideA;

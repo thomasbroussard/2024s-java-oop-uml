@@ -1,6 +1,7 @@
 package fr.epita.geometry.launcher;
 
 import fr.epita.geometry.datamodel.Circle;
+import fr.epita.geometry.datamodel.Shape;
 import fr.epita.geometry.datamodel.Triangle;
 
 import java.util.ArrayList;
@@ -10,17 +11,20 @@ public class Main {
     public static void main(String[] args) {
         System.out.println("Hello world!");
 
-        List<Triangle> triangles =  new ArrayList<>();
+        List<Shape> shapes =  new ArrayList<>();
 
-        for (int i = 0; i < 1000000; i++){
+        for (int i = 0; i < 2; i++){
             Triangle triangle = new Triangle(1 + i,2+i,3+i,4+i);
-            triangles.add(triangle);
-            // System.out.println(triangleArea);
-            // System.out.println(trianglePerimeter);
+            Circle circle = new Circle(2+i);
+            shapes.add(triangle);
+            shapes.add(circle);
+
         }
 
-
-
+        double totalShapeArea = 0.0;
+        for (var shape : shapes){
+            totalShapeArea = totalShapeArea + shape.calculateArea();
+        }
 
 
         Circle circle = new Circle(2);
