@@ -7,6 +7,8 @@ import java.io.IOException;
 import java.nio.file.Files;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.function.Predicate;
+import java.util.stream.Collectors;
 
 public class Main {
     public static void main(String[] args) {
@@ -40,12 +42,36 @@ public class Main {
             System.out.println("passenger size: " +passengers.size());
             System.out.println("errors size: " +errors.size());
 
+            double avgAge = getAvgAge(passengers);
+
+
+
+            System.out.println("average age" + avgAge);
+
+            List<Passenger> survivors = passengers.stream().filter(p -> p.getSurvived() == 1).toList();
+            List<Passenger> notSurvived = queryList(passengers, p -> p.getSurvived() == 0);
+
+            List<Passenger> passengersFromFirstClass = queryList(passengers, p -> p.getpClass().equals("1st"));
+
+            System.out.println("survived: " + survivors.size());
+            System.out.println("not survived: " + notSurvived.size());
 
         } catch (IOException ioe){
             ioe.printStackTrace();
             return;
         }
+    }
 
+    private static List<Passenger> queryList(List<Passenger> passengers, Predicate<Passenger> passengerPredicate) {
+        return passengers.stream().filter(passengerPredicate).toList();
+    }
 
+    private static double getAvgAge(List<Passenger> passengers) {
+        double avgAge = 0.0;
+        for (Passenger p : passengers){
+            avgAge += p.getAge();
+        }
+        avgAge = avgAge / passengers.size();
+        return avgAge;
     }
 }
