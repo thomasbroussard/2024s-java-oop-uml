@@ -6,7 +6,10 @@ import java.io.File;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
+import java.util.function.Function;
 import java.util.function.Predicate;
 import java.util.stream.Collectors;
 
@@ -56,10 +59,27 @@ public class Main {
             System.out.println("survived: " + survivors.size());
             System.out.println("not survived: " + notSurvived.size());
 
+            Set<Object> valuesForPclass = computeUniqueValues(passengers, Passenger::getpClass);
+            Set<Object> valuesForSurvived = computeUniqueValues(passengers, Passenger::getSurvived);
+
+
+
+            System.out.println(valuesForPclass);
+            System.out.println(valuesForSurvived);
+
         } catch (IOException ioe){
             ioe.printStackTrace();
             return;
         }
+    }
+
+    private static Set<Object> computeUniqueValues(List<Passenger> passengers, Function<Passenger, Object> transformationFunction) {
+        Set<Object> stringSet = new HashSet<>();
+
+        for (Passenger passenger : passengers){
+            stringSet.add(transformationFunction.apply(passenger));
+        }
+        return stringSet;
     }
 
     private static List<Passenger> queryList(List<Passenger> passengers, Predicate<Passenger> passengerPredicate) {
