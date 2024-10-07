@@ -1,4 +1,4 @@
-package fr.epita.files.launcher;
+package fr.epita.files.launcher.launcher;
 
 import java.io.File;
 import java.io.IOException;

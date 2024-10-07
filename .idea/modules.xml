@@ -3,6 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/bank-account/bank-account.iml" filepath="$PROJECT_DIR$/bank-account/bank-account.iml" />
+      <module fileurl="file://$PROJECT_DIR$/file-exercises/file-exercises.iml" filepath="$PROJECT_DIR$/file-exercises/file-exercises.iml" />
       <module fileurl="file://$PROJECT_DIR$/geometry/geometry.iml" filepath="$PROJECT_DIR$/geometry/geometry.iml" />
       <module fileurl="file://$PROJECT_DIR$/java-exercises.iml" filepath="$PROJECT_DIR$/java-exercises.iml" />
     </modules>
