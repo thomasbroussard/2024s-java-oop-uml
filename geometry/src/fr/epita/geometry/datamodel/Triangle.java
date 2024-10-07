@@ -16,6 +16,8 @@ public class Triangle implements Shape {
         this.sideB = sideB;
     }
 
+    double totalTriangleArea =
+
     public double calculateArea(){
         return this.base * this.height / 2;
     }
