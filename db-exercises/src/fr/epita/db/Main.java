@@ -5,21 +5,24 @@ import java.sql.*;
 public class Main {
     public static void main(String[] args) throws SQLException {
         Connection connection = DriverManager.getConnection("jdbc:h2:mem:test", "test", "test");
-        PreparedStatement preparedStatement = connection.prepareStatement("CREATE TABLE USERS (name VARCHAR(255))");
-        preparedStatement.execute();
+        PreparedStatement createStatement = connection.prepareStatement("CREATE TABLE USERS (name VARCHAR(255))");
+        createStatement.execute();
 
-        connection.prepareStatement("INSERT INTO USERS");
+        PreparedStatement insertStatement  = connection.prepareStatement("INSERT INTO USERS (name) VALUES ('test')");
+        PreparedStatement insertStatement2  = connection.prepareStatement("INSERT INTO USERS (name) VALUES ('test2')");
+        insertStatement.execute();
+        insertStatement2.execute();
 
 
-        PreparedStatement query = connection.prepareStatement("SELECT name FROM USERS");
-        ResultSet resultSet = query.executeQuery();
+        PreparedStatement selectQueryStatement = connection.prepareStatement("SELECT name FROM USERS");
+        ResultSet resultSet = selectQueryStatement.executeQuery();
         while (resultSet.next()){
             System.out.println(resultSet.getString("name"));
 
         }
 
         resultSet.close();
-        query.close();
+        selectQueryStatement.close();
 
 
     }
