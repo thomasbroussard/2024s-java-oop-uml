@@ -1,6 +1,7 @@
 package fr.epita.files.launcher;
 
 import fr.epita.files.datamodel.Passenger;
+import fr.epita.files.services.CSVPassengerDataService;
 
 import java.io.File;
 import java.io.IOException;
@@ -19,32 +20,10 @@ public class Main {
         System.out.println(csvFile.exists());
 
         try {
-            List<String> lines = Files.readAllLines(csvFile.toPath());
-            System.out.println(lines.get(0));
-            lines.remove(0);
-            System.out.println(lines.get(0));
-            List<Passenger> passengers = new ArrayList<>();
-            List<String> errors = new ArrayList<>();
-            for (String line : lines){
-                System.out.println(line);
-                try {
-                    String[] passengerParts = line.split(";");
-                    Passenger passenger = new Passenger();
-                    //Name ;PClass;Age ;Sex   ;Survived
-                    passenger.setName(passengerParts[0].trim());
-                    passenger.setpClass(passengerParts[1].trim());
-                    passenger.setAge(Double.parseDouble(passengerParts[2].trim()));
-                    passenger.setSex(passengerParts[3]);
-                    passenger.setSurvived(Integer.parseInt(passengerParts[4].trim()));
-                    passengers.add(passenger);
-                } catch (Exception e){
-                    errors.add(line);
-                    System.out.println(e.getMessage());
-                }
-            }
-            System.out.println("passenger size: " +passengers.size());
-            System.out.println("errors size: " +errors.size());
 
+            List<Passenger> passengers = CSVPassengerDataService.extractPassengers(csvFile);
+
+            /* business logic playground */
             double avgAge = getAvgAge(passengers);
 
 
@@ -74,11 +53,17 @@ public class Main {
             System.out.println(valuesForPclass);
             System.out.println(valuesForSurvived);
 
+
+
+            CSVPassengerDataService.writeListToFile(passengers, new File("./file-exercises/output-data.csv"));
+            CSVPassengerDataService.writeListToHtmlFile(passengers, new File("./file-exercises/output-data.html"));
+
         } catch (IOException ioe){
             ioe.printStackTrace();
             return;
         }
     }
+
 
     private static Set<Object> computeUniqueValues(List<Passenger> passengers, Function<Passenger, Object> transformationFunction) {
         Set<Object> stringSet = new HashSet<>();
