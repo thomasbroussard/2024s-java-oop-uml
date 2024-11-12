@@ -55,6 +55,13 @@ public class Main {
             List<Passenger> notSurvived = queryList(passengers, p -> p.getSurvived() == 0);
 
             List<Passenger> passengersFromFirstClass = queryList(passengers, p -> p.getpClass().equals("1st"));
+            //is equivalent to the following:
+            List<Passenger> passengersFromFirstClass2 = queryList(passengers, new Predicate<Passenger>() {
+                @Override
+                public boolean test(Passenger p) {
+                   return p.getpClass().equals("1st");
+                }
+            });
 
             System.out.println("survived: " + survivors.size());
             System.out.println("not survived: " + notSurvived.size());
