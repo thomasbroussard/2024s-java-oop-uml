@@ -110,4 +110,16 @@ public class Passenger {
     public void setEmbarked(String embarked) {
         this.embarked = embarked;
     }
+
+    @Override
+    public String toString() {
+        return "Passenger{" +
+                "passengerId=" + passengerId +
+                ", survived=" + survived +
+                ", pClass='" + pClass + '\'' +
+                ", name='" + name + '\'' +
+                ", sex='" + sex + '\'' +
+                ", age=" + age +
+                '}';
+    }
 }
