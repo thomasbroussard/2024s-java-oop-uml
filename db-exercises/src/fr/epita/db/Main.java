@@ -1,6 +1,7 @@
 package fr.epita.db;
 
 import fr.epita.db.services.PassengerJDBCDAO;
+import fr.epita.db.services.exceptions.UnableToSavePassengerException;
 import fr.epita.files.datamodel.Passenger;
 
 import java.sql.*;
@@ -17,7 +18,11 @@ public class Main {
         passenger.setSurvived(0);
 
         PassengerJDBCDAO dao = new PassengerJDBCDAO();
-        dao.save(passenger);
+        try {
+            dao.save(passenger);
+        } catch (UnableToSavePassengerException exception){
+            System.out.println("the passenger was unfortunately not saved in the system");
+        }
 
         List<Passenger> passengers = dao.readAll();
         System.out.println(passengers);
