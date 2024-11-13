@@ -22,6 +22,7 @@ public class Main {
         List<Passenger> passengers = dao.readAll();
         System.out.println(passengers);
 
+        dao.delete(passenger);
 
     }
 }
