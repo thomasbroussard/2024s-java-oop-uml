@@ -1,0 +1,25 @@
+
+p
+java:S1604&"(Make this anonymous inner class a lambda(ÄŞƒîûÿÿÿÿ8Ãœ¯ı±2J$9490e2bc-6844-4587-959c-9868a26b1869
+”
+java:S1854$"LRemove this useless assignment to local variable "passengersFromFirstClass".(°¢£´şÿÿÿÿ8Ïœ¯ı±2J$418c6fa6-0f3f-49b6-b5b9-6ff9ca03dff4
+•
+java:S1854&"MRemove this useless assignment to local variable "passengersFromFirstClass2".(ÄŞƒîûÿÿÿÿ8Ïœ¯ı±2J$06fd6213-f1b3-4c6c-aba8-9c82265c60ce
+^
+java:S3626?"Remove this redundant jump.(ûÁİ…8Ïœ¯ı±2J$4371982c-ced6-4674-95f3-7b7b8280d070
+r	java:S106"+Replace this use of System.out by a logger.(¢É¡£ùÿÿÿÿ8Ğœ¯ı±2J$857c5a4e-9ebe-4dff-bd01-04220ea9d79d
+m	java:S106"+Replace this use of System.out by a logger.(òğª8Òœ¯ı±2J$6dc2b175-b15d-4e23-ac47-4d991b6f2bb6
+…
+java:S1481$"=Remove this unused "passengersFromFirstClass" local variable.(°¢£´şÿÿÿÿ8Ôœ¯ı±2J$de738913-92e7-4f66-9a66-b5788a603591
+†
+java:S1481&">Remove this unused "passengersFromFirstClass2" local variable.(ÄŞƒîûÿÿÿÿ8Öœ¯ı±2J$f842e0ad-4ed4-44db-9d56-d9c1d7b8690b
+r	java:S106-"+Replace this use of System.out by a logger.( ‰Òßşÿÿÿÿ8Öœ¯ı±2J$47aeb399-27e4-450d-afa5-e8afdb9609c8
+m	java:S106."+Replace this use of System.out by a logger.(¥Ş›8×œ¯ı±2J$d22229d3-267c-4009-b43a-9a3bd4780cb5
+r	java:S1065"+Replace this use of System.out by a logger.(•‘Š¼ÿÿÿÿÿ8Øœ¯ı±2J$93e7f8a7-d703-4b5e-92e9-136adfef0ae1
+m	java:S1066"+Replace this use of System.out by a logger.(Î‘¶8Øœ¯ı±2J$cb671c08-3253-4c48-ad84-0891a5c6a144
+s
+java:S1128"0Remove this unused import 'java.nio.file.Files'.(‚ƒü8Õ®Âş±2J$3263744a-0bf2-43f2-85ea-7860221dbd94
+s
+java:S1128	"0Remove this unused import 'java.util.ArrayList'.(÷‰îƒ8Õ®Âş±2J$5284a144-e225-4676-ad81-47e3089a58f4
+€
+java:S1128"8Remove this unused import 'java.util.stream.Collectors'.(Óóº´úÿÿÿÿ8Õ®Âş±2J$43d89271-9a5b-4776-aa05-237eedc184f6

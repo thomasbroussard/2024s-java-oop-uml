@@ -1,5 +1,6 @@
 package fr.epita.db.services;
 
+import fr.epita.db.services.exceptions.UnableToSavePassengerException;
 import fr.epita.files.datamodel.Passenger;
 
 import java.sql.*;
@@ -9,6 +10,7 @@ import java.util.List;
 public class PassengerJDBCDAO {
 
     public static final String SELECT_PASSENGER_QUERY = "SELECT name, age, pclass, sex, survived FROM PASSENGERS";
+    public static final String DELETE_PASSENGER = "DELETE FROM PASSENGERS WHERE name = ?";
 
     public PassengerJDBCDAO(){
         try (Connection connection = getConnection()){
@@ -37,6 +39,7 @@ public class PassengerJDBCDAO {
             insertStatement.execute();
         } catch (SQLException e) {
             e.printStackTrace();
+            throw new UnableToSavePassengerException();
         }
     }
 
@@ -68,4 +71,13 @@ public class PassengerJDBCDAO {
         return DriverManager.getConnection("jdbc:h2:mem:test;DB_CLOSE_DELAY=-1", "test", "test");
     }
 
+    public void delete(Passenger passenger) {
+        try (Connection connection = getConnection()) {
+            PreparedStatement deleteStatement = connection.prepareStatement(DELETE_PASSENGER);
+            deleteStatement.setString(1, passenger.getName());
+            deleteStatement.execute();
+        } catch (SQLException e){
+            e.printStackTrace();
+        }
+    }
 }
